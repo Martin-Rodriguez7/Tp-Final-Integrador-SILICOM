@@ -1,0 +1,14 @@
+/*LOGIN*/
+.img-row {
+  background-image: url('/img/fondologin.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html,
+body,
+.container-fluid {
+  height: 100%;
+
+}
