@@ -13,7 +13,7 @@ function Navbar() {
     <div className="d-flex sid">
       <div id="sidebar-container" className="bg-primary shadow-lg d-none d-sm-inline ps-4 pe-4 pt-2">
         <div className="logo border-bottom border-secondary text-center">
-          <img src="../img/logo.png" width="130" height="75" alt="logotdi" className="m-2" />
+          <img  src={require("../img/silicon.svg").default} width="200" height="75" alt="logosilicon" className="m-2" />
         </div>
         <div className="estado fs-5 border-bottom border-secondary text-center pt-2 pb-2">
           <a className="navsidebar status">
@@ -22,18 +22,11 @@ function Navbar() {
         </div>
         <div className="menu">
           <ul className="nav mt-2 nav-pills container">
+           
             <p className="navsidebar d-block pt-2 text-light text-center fs-5">
-            <NavLink to="/AltaAlumno">Alta Usuario</NavLink>
+            <NavLink to="/AltaAlumno">Alta Alumno</NavLink>
             </p>
-            <a href="./listUser.php" className="navsidebar d-block pt-2 text-light text-center fs-5">
-              <i className="ion ion-md-list-box me-2 fs-5"></i>Lista de Usuarios
-            </a>
-            <a href="./tabinfo.php" className="navsidebar d-block pt-2 text-light text-center fs-5">
-              <i className="icon ion-ios-browsers me-2 fs-5"></i>Informacion
-            </a>
-            <a href="./forms.php" className="navsidebar d-block pt-2 text-light text-center fs-5">
-              <i className="ion-ios-paper me-2 fs-5"></i>Formularios
-            </a>
+           
           </ul>
         </div>
       </div>
