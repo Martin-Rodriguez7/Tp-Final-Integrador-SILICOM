@@ -70,7 +70,6 @@ function Navbar() {
                             </form>
                             <div className="nav-item dropdown d-flex">
                                 <a className="nav-link dropdown-toggle fw-bold fs-5 pt-0 m-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="../img/user-perfil.jpeg" className="img-fluid rounded-1 me-2 avatar-perfil" alt="img-user-perfil"/>
                                     Rodriguez Martin
                                     <p className="user-rol fs-6 fw-light ms-5 position-absolute">Proyect
                                         Manager</p>
