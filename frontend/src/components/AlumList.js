@@ -1,7 +1,6 @@
 import React from 'react';
 
-const BookList = ({book, setBook, books, setListUpdated}) => {
-
+const AlumnoList = ({alum, setAlumno, Alumnos, setListUpdated}) => {
 
     const handleDelete = id => {
         const requestInit = {
@@ -14,28 +13,28 @@ const BookList = ({book, setBook, books, setListUpdated}) => {
         setListUpdated(true)
     }
 
-    let{titulo, autor, edicion} = book
+    let{nombre, apellido, dni} = Alumnos
     const handleUpdate = id => {
-        edicion = parseInt(edicion, 10)
+        dni = parseInt(dni, 10)
         //validación de los datos
-        if (titulo === '' || autor === '' || edicion <= 0 ) {
+        if (nombre === '' || apellido === '' || dni <= 0 ) {
             alert('Todos los campos son obligatorios')
             return
         }
         const requestInit = {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(book)
+            body: JSON.stringify(Alumnos)
         }
         fetch('http://localhost:9000/api/' + id, requestInit)
         .then(res => res.text())
         .then(res => console.log(res))
 
         //reiniciando state de libro
-        setBook({
-            titulo: '',
-            autor: '',
-            edicion: 0
+        setAlumno({
+            nombre: '',
+            apellido: '',
+            dni: 0
         })
 
         setListUpdated(true)
@@ -47,24 +46,24 @@ const BookList = ({book, setBook, books, setListUpdated}) => {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Npmbre</th>
+                    <th>Nombre</th>
                     <th>Apellido</th>
                     <th>DNI</th>
                 </tr>
             </thead>
             <tbody>
-                {books.map(book => (
-                    <tr key={book.id}>
-                        <td>{book.id}</td>
-                        <td>{book.titulo}</td>
-                        <td>{book.autor}</td>
-                        <td>{book.edicion}</td>
+                {Alumnos.map(alum=> (
+                    <tr key={alum.id}>
+                        <td>{alum.id}</td>
+                        <td>{alum.nombre}</td>
+                        <td>{alum.apellido}</td>
+                        <td>{alum.dni}</td>
                         <td>
                             <div className="mb-3">
-                                <button onClick={() => handleDelete(book.id)} className="btn btn-danger">Delete</button>
+                                <button onClick={() => handleDelete(alum.id)} className="btn btn-danger">Borrar</button>
                             </div>
                             <div className="mb-3">
-                                <button onClick={() => handleUpdate(book.id)} className="btn btn-dark">Update</button>
+                                <button onClick={() => handleUpdate(alum.id)} className="btn btn-dark">Modificar</button>
                             </div>
                         </td>
                     </tr>
@@ -74,4 +73,4 @@ const BookList = ({book, setBook, books, setListUpdated}) => {
     );
 }
  
-export default BookList;
+export default AlumnoList;

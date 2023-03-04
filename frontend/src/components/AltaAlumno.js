@@ -3,48 +3,37 @@ import AlumList from './AlumList'
 import Form from '../components/Form'
 
 function AlumnoAlta() {
-  const [id, setId] = useState('1');
-  const [nombre, setNombre] = useState('caca');
-  const [apellido, setApellido] = useState('cwcw');
-  const [dni, setDni] = useState('21312');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('ID:', id);
-    console.log('Nombre:', nombre);
-    console.log('Apellido:', apellido);
-    console.log('DNI:', dni);
-  }
-  const [book, setBook] = useState({
-    titulo: '',
-    autor: '',
-    edicion: 0
+  const [alumno, setAlumno] = useState({
+    nombre: '',
+    apellido: '',
+    dni: 0
   })
 
-  const [books, setBooks] = useState([])
+  const [alumnos, setAlumnos] = useState([])
 
   const [listUpdated, setListUpdated] = useState(false)
 
   useEffect(() => {
-    const getBooks = () => {
-      fetch('http://localhost:9000/api')
+    const getAlumnos = () => {
+      fetch('http://localhost:9000/api/AltaAlumno')
       .then(res => res.json())
-      .then(res => setBooks(res))
+      .then(res => setAlumnos(res))
     }
-    getBooks()
+    getAlumnos()
     setListUpdated(false)
   }, [listUpdated])
-  
+
   return (
     <div className="container">
     <div className="row">
       <div className="col-7">
-        <h2 style={{textAlign: 'center'}}>Lista de Alumnos</h2>
-        <AlumList book={book} setBook={setBook} books={books} setListUpdated={setListUpdated}/>
+        <h2 style={{textAlign: 'center'}}>Lista de alumnos</h2>
+        <AlumList alumno={alumno} setAlumno={setAlumno} Alumnos={alumnos} setListUpdated={setListUpdated}/>
       </div>
       <div className="col-5">
-        <h2 style={{textAlign: 'center'}}>Alta Alumnos</h2>
-        <Form book={book} setBook={setBook}/>
+        <h2 style={{textAlign: 'center'}}>Alta de Alumnos</h2>
+        <Form alumno={alumno} setAlumno={setAlumno}/>
       </div>
     </div>
   </div>

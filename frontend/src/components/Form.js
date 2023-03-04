@@ -1,20 +1,20 @@
 import React from 'react';
 
-const Form = ({book, setBook}) => {
+const Form = ({alumno, setAlumno}) => {
 
     const handleChange = e => {
-        setBook({
-            ...book,
+        setAlumno({
+            ...alumno,
             [e.target.name]: e.target.value
         })
     }
 
-    let{titulo, autor, edicion} = book
+    let{nombre, apellido, dni} = alumno
 
     const handleSubmit = () => {
-        edicion = parseInt(edicion, 10)
+        dni = parseInt(dni, 10)
         //validación de los datos
-        if (titulo === '' || autor === '' || edicion <= 0 ) {
+        if (nombre === '' || apellido === '' || dni <= 0 ) {
             alert('Todos los campos son obligatorios')
             return
         }
@@ -23,38 +23,35 @@ const Form = ({book, setBook}) => {
         const requestInit = {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(book)
+            body: JSON.stringify(alumno)
         }
         fetch('http://localhost:9000/api', requestInit)
         .then(res => res.text())
         .then(res => console.log(res))
 
         //reiniciando state de libro
-        setBook({
-            titulo: '',
-            autor: '',
-            edicion: 0
+        setAlumno({
+            nombre: '',
+            apellido: '',
+            dni: 0
         })
-
-
-
     }
 
     return ( 
         <form onSubmit={handleSubmit}>
             <div className="mb-3">
-                <label htmlFor="title" className="form-label">Nombre</label>
-                <input value={titulo} name="titulo" onChange={handleChange} type="text" id="title" className="form-control"/>
+                <label htmlFor="title" className="form-label">Nombew</label>
+                <input value={nombre} name="nombre" onChange={handleChange} type="text" id="title" className="form-control"/>
             </div>
             <div className="mb-3">
                 <label htmlFor="author" className="form-label">Apellido</label>
-                <input value={autor} name="autor" onChange={handleChange} type="text" id="author" className="form-control"/>
+                <input value={apellido} name="apellido" onChange={handleChange} type="text" id="author" className="form-control"/>
             </div>
             <div className="mb-3">
                 <label htmlFor="edition" className="form-label">DNI</label>
-                <input value={edicion}  name="edicion" onChange={handleChange} type="number" id="edition" className="form-control"/>
+                <input value={dni}  name="dni" onChange={handleChange} type="number" id="edition" className="form-control"/>
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">Guardar</button>
         </form>
     );
 }

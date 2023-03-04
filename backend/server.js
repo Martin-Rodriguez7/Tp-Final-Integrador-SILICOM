@@ -1,7 +1,7 @@
 const express = require('express')
 const mysql = require('mysql')
 const myconn = require('express-myconnection')
-
+const cors = require('cors')
 const routes = require('./routes')
 
 const app = express()
@@ -17,6 +17,7 @@ const dbOptions = {
 // middlewares -------------------------------------
 app.use(myconn(mysql, dbOptions, 'single'))
 app.use(express.json())
+app.use(cors())
 
 
 

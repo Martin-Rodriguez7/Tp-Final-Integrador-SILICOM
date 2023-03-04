@@ -1,7 +1,6 @@
 import React, {Fragment, useState, useEffect} from 'react';
 import Navbar from './components/Navbar'
-import BookList from './components/BookList'
-import Form from './components/Form'
+
 
 import {
   BrowserRouter,
@@ -11,7 +10,6 @@ import {
 import AlumnoAlta from './components/AltaAlumno';
 
 function App() {
-
   
   return (
     <BrowserRouter>
