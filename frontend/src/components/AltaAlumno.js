@@ -25,18 +25,18 @@ function AlumnoAlta() {
   }, [listUpdated])
 
   return (
-    <div className="container">
-    <div className="row">
-      <div className="col-7">
+   
+    <div className="d-flex">
+      <div className="m-5 col-7">
         <h2 style={{textAlign: 'center'}}>Lista de alumnos</h2>
         <AlumList alumno={alumno} setAlumno={setAlumno} Alumnos={alumnos} setListUpdated={setListUpdated}/>
       </div>
-      <div className="col-5">
+      <div className="m-5 col-5">
         <h2 style={{textAlign: 'center'}}>Alta de Alumnos</h2>
         <Form alumno={alumno} setAlumno={setAlumno}/>
       </div>
     </div>
-  </div>
+ 
   );
 }
 

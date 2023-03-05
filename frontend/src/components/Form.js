@@ -40,7 +40,7 @@ const Form = ({alumno, setAlumno}) => {
     return ( 
         <form onSubmit={handleSubmit}>
             <div className="mb-3">
-                <label htmlFor="title" className="form-label">Nombew</label>
+                <label htmlFor="title" className="form-label">Nombre</label>
                 <input value={nombre} name="nombre" onChange={handleChange} type="text" id="title" className="form-control"/>
             </div>
             <div className="mb-3">

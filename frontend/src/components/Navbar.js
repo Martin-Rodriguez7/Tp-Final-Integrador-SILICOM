@@ -1,39 +1,19 @@
 import React, { Fragment } from 'react';
 import "../Bootstrap/bootstrap.min.css";
 import "../css/estilos.css";
-//import "ionicons.min.css";
-//import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from 'react-router-dom';
 import "./AltaAlumno.js";
+
 function Navbar() {
   return (
     <>
-    <div className="d-flex sid">
-      <div id="sidebar-container" className="bg-primary shadow-lg d-none d-sm-inline ps-4 pe-4 pt-2">
-        <div className="logo border-bottom border-secondary text-center">
+   <div className="w-100 navbr">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <div className="logo text-center m-1">
           <img  src={require("../img/silicon.svg").default} width="200" height="75" alt="logosilicon" className="m-2" />
         </div>
-        <div className="estado fs-5 border-bottom border-secondary text-center pt-2 pb-2">
-          <a className="navsidebar status">
-            Estado: <FontAwesomeIcon icon={faCircle} className="statusCir" /> <span>Activo</span>
-          </a>
-        </div>
-        <div className="menu">
-          <ul className="nav mt-2 nav-pills container">
-           
-            <p className="navsidebar d-block pt-2 text-light text-center fs-5">
-            <NavLink to="/AltaAlumno">Alta Alumno</NavLink>
-            </p>
-           
-          </ul>
-        </div>
-      </div>
-
-      </div>
-        <div className="w-100">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light shadow">
           <div className="container-fluid">
             <button
               className="navbar-toggler"
@@ -65,8 +45,7 @@ function Navbar() {
               </div>
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <form className="d-flex form-check-inline position-relative my-2 d-inline-block">
-                                <input className="rounded-2  p-2 btn-buscar" name="buscar" type="search" placeholder="Buscar" aria-label="Buscar"/>
-                                <button className="btn btn-primary btn-buscar p-2 ms-1" type="submit"><i className="icon icon-search ion-md-search "></i></button>
+                                <button className="btn btn-primary btn-buscar p-2 ms-1" type="btnsesion">Inicias Sesión<i className="icon icon-search ion-md-search "></i></button>
                             </form>
                             <div className="nav-item dropdown d-flex">
                                 <a className="nav-link dropdown-toggle fw-bold fs-5 pt-0 m-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -88,6 +67,12 @@ function Navbar() {
                 </div>
             </nav>
         </div>
+     
+
+      
+        
+    
+        
         </>
             )};
 export default Navbar;
