@@ -3,8 +3,6 @@ import { Route } from 'react-router-dom';
 
 import Dashboard from '../components/views/Dashboard';
 
-
-
 import { Navigate } from 'react-router-dom';
 
 
@@ -12,8 +10,10 @@ function PrivateRoute({ component: Component, ...rest }) {
   const isAuthenticated = () => {
     const token = localStorage.getItem('token');
     try {
-     // const decoded = jwt.verify(token, 'secret');
-      return true;
+      if(token){
+        return true
+      }
+     ;
     } catch (err) {
       return false;
     }

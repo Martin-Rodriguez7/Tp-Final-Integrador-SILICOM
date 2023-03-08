@@ -1,13 +1,20 @@
 import React, { Fragment } from 'react';
 import "../../Bootstrap/bootstrap.min.css";
 import "../../css/estilos.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from 'react-router-dom';
 import "../AltaAlumno.js";
+import { useNavigate } from 'react-router-dom';
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import Login from '../views/Login';
+import { NavLink } from 'react-router-dom';
+
 
 function Navbar() {
+ 
+  
+
+
   return (
+
     <>
    <div className="w-100 navbr">
         <nav className="navbar navbar-expand-lg navbar-light bg-light shadow">
@@ -45,7 +52,8 @@ function Navbar() {
               </div>
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <form className="d-flex form-check-inline position-relative my-2 d-inline-block">
-                                <button className="btn btn-primary btn-buscar p-2 ms-1" type="btnsesion">Inicias Sesión<i className="icon icon-search ion-md-search "></i></button>
+                                
+                                <NavLink to="/login" className="btn btn-primary btn-buscar p-2 ms-1">Iniciar Sesion</NavLink>
                             </form>
                             <div className="nav-item dropdown d-flex">
                                 <a className="nav-link dropdown-toggle fw-bold fs-5 pt-0 m-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

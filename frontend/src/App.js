@@ -13,13 +13,26 @@ import Sidebar from './components/Layout/Sidebar';
 import LoginForm from './components/views/Login';
 import RoutesUser from './routes/RoutesUser';
 import Dashboard from './components/views/Dashboard';
+import Login from './components/views/Login';
 function App() {
   
   return (
     
-    <RoutesUser> </RoutesUser>
-   
+    <BrowserRouter>
 
+    
+       <Routes>
+        
+         <Route path="/" element={<Dashboard />}></Route>
+         <Route path="/Dashboard" element={<Dashboard />}></Route>
+         <Route path="/login" element={<Login />}></Route>
+
+         </Routes>
+       
+  
+
+
+   </BrowserRouter>
    
   );
 }

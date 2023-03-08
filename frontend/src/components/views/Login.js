@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../../css/estiloLogin.css'
-
+import {Routes,Route} from "react-router-dom";
+import Dashboard from './Dashboard';
 const Login = () => {
+  const navigate = useNavigate();
   const [body, setBody] = useState({ username: '', password: '' })
 
-    const navigate = useNavigate();
+  
 
     const inputChange = ({ target }) => {
       const { name, value } = target
@@ -22,7 +24,10 @@ const Login = () => {
           .then(({ data }) => {
             console.log(data)
               localStorage.setItem('token', data.token);
-
+              <Routes>
+              <Route path="/Dashboard" render={(props) => <Dashboard rol="Juan" {...props} />} />
+          
+              </Routes>
               navigate('/Dashboard')
           })
           .catch(({ response }) => {
