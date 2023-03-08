@@ -17,12 +17,7 @@ function Dashboard() {
     <main className='app row'>
 
       <Sidebar></Sidebar>
-     
-        <Routes>
-         
-          <Route path="/AltaAlumno" element={<AlumnoAlta />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          </Routes>
+    
         
       </main>
     </Fragment>

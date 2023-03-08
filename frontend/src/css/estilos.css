@@ -7,13 +7,11 @@
     color: #1ed12d;
     font-size: 15px;
 }
-.status{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+
 .navsidebar{
-    
     color: rgb(159, 159, 159) !important;
     transition: .3s ease all;
+    font-size: 15px;
 }
 .navsidebar:hover{
     color: #fff !important;
@@ -24,7 +22,13 @@
     color: var(--primary);
     transition: .3s ease all;
 }
-
+.navsid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   
+}
 
   .navbar-nav{
     z-index: 0;
@@ -101,10 +105,6 @@ a {
     background-color: var(--light) !important;
 }
 
-
-.user-rol {
-    top: 2.1rem;
-}
 
 
 

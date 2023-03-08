@@ -20,18 +20,15 @@ function App() {
     
     <BrowserRouter>
 
-    
+      <Dashboard></Dashboard>
        <Routes>
         
-         <Route path="/" element={<Dashboard />}></Route>
-         <Route path="/Dashboard" element={<Dashboard />}></Route>
+        <Route path="/AltaAlumno" element={<AlumnoAlta/>}></Route>
+        
          <Route path="/login" element={<Login />}></Route>
 
          </Routes>
        
-  
-
-
    </BrowserRouter>
    
   );
