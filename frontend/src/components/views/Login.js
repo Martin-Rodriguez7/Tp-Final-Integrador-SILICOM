@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../../css/estiloLogin.css'
 import {Routes,Route} from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 import Dashboard from './Dashboard';
 const Login = () => {
   const navigate = useNavigate();
@@ -24,11 +25,8 @@ const Login = () => {
           .then(({ data }) => {
             console.log(data)
               localStorage.setItem('token', data.token);
-              <Routes>
-              <Route path="/Dashboard" render={(props) => <Dashboard rol="Juan" {...props} />} />
-          
-              </Routes>
-              navigate('/Dashboard')
+              
+              navigate('/')
           })
           .catch(({ response }) => {
               console.log(response.data)
@@ -37,10 +35,11 @@ const Login = () => {
   }
  
     return (
-      <div className='d-flex'>
+      <div className='d-flex mt-5'>
       <div className="form-signin text-center rounded shadow-lg p-3 mb-5">
         <form id="formLogin"  method="POST">
-          <img className="mb-4 mt-3" src={require("../../img/silicon.svg").default} alt="" width="150" height="57" />
+            <h2 className='m-3'>Iniciar Sesion</h2>
+
           <div className="form-floating">
             <input type="text" className="form-control mb-3" id="user"  value={body.username}
                             onChange={inputChange} name="username" placeholder="User" />

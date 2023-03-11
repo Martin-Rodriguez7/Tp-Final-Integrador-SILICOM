@@ -16,18 +16,18 @@ if(token){
 
   return (
     <>
-      <div id="sidebar-container" className=" d-flex sidebar bg-primary shadow-lg d-none d-sm-inline ps-4 pe-4 pt-2">  
-      <div className="menu">
-          <ul className="nav mt-2 d-flex navsid">    
-            <li className="navsidebar text-light text-center fs-5">
-            {userRole === 'docente' && <li><Link to='/AltaAlumno'>Alumnos</Link></li>}    
+      <div id="sidebar" className="shadow-lg ps-4 pe-4 pt-2">  
+    
+          <ul className="list-unstyled components">    
+            <li className=" text-light text-center fs-5">
+            {userRole === 'docente' && <li><Link to='/Alumno'>Alumnos</Link></li>}    
             </li>
             
-            <li className="navsidebar text-light text-center fs-5">
+            <li className=" text-light text-center fs-5">
             <Link to="/cursos">Cursos</Link>
             </li>
           </ul>
-        </div>
+      
       </div>
         </>
             )};

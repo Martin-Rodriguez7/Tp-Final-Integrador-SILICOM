@@ -36,59 +36,41 @@
   
   .app {
     display: flex;
-    position: fixed;
-    flex-direction: column;
+    
+    
     height: 100%;
   }
   
-  .app-content {
-    flex-grow: 1;
-    padding: 20px;
-  }
+
+
  
 .sidebar{
-    width: 300px;
-
+    width: 200px;
+    
 }
 .navcol:hover{
     color: rgb(113, 113, 113) !important;
     transition: .3s ease all;
 }
-.btn-buscar {
-    border: 2px solid #e3e0e0;
-    ;
-}
 
-.btn-action:hover {
-    background-color: rgb(155, 176, 214);
-}
-
-.icon {
-    pointer-events: none;
-}
 
 body {
-
+    height: 100%;
     color: var(--primary);
 }
-
+.navbar{
+    z-index: 100;
+}
 #sidebar-container {
-    min-height: 100vh;
+
+ min-height: 115vh;
 
 }
 .navbr{
-    z-index: 1;
-}
-
-#sidebar-container .logo {
-    padding: .875rem 1.25rem;
+    z-index: 100;
 }
 
 
-#sidebar-container .menu {
-    width: 12.5rem;
-
-}
 
 a {
     text-decoration: none;
@@ -107,5 +89,63 @@ a {
 
 
 
+#sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 4;
+    padding-top: 50%;
+    top: 0;
+    left: 0;
+    background-color: #acacac;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  #sidebar ul.components {
+    padding: 0;
+    margin-top: 150px;
+  }
+  
+  #sidebar ul li {
+    text-align: left;
+  }
+  
+  #sidebar ul li > a {
+    display: block;
+    padding: 10px 16px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #sidebar ul li > a:hover {
+    background-color: #eee;
+    color: #666;
+  }
+  
+  #sidebar ul li.active > a {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    #sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    #sidebar ul.components {
+        padding: 0;
+        margin-top: 0px;
+      }
+      
+  }
 
-
+  .flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }

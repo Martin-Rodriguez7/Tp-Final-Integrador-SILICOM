@@ -45,9 +45,8 @@ app.post('/api/login', (req, res) => {
                     { id: result[0].id, username: result[0].nickname, role:  result[0].rol },
                     'secret'
                   );
-                //  res.json({ token });
-                  res.status(200).json({"id": result[0].id,"username": result[0].nickname,"rol": result[0].rol,"token":token
-				})
+                  res.status(200).json({ token });
+                
 			} else {
 				res.status(400).send('Usuario no existe')
 			}

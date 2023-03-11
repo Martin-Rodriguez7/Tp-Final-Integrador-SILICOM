@@ -1,32 +1,30 @@
 import React, {Fragment} from 'react';
 import Navbar from '../../components/Layout/Navbar'
 import Sidebar from '../../components/Layout/Sidebar'
-
-
-import AlumnoAlta from '../AltaAlumno';
-import {BrowserRouter,Routes,Route} from "react-router-dom";
-import Login from './Login';
-
+import NavPage from '../NavPage';
 
 function Dashboard() {
-  
+
+
   return (
-   
-     <Fragment>
-    <Navbar/>
-    <main className='app row'>
+    
+    <Fragment>
+    
+    <Navbar />
 
-      <Sidebar></Sidebar>
-     
-        <Routes>
-          <Route path="/AltaAlumno" element={<AlumnoAlta/>}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          </Routes>
-        
-      </main>
-    </Fragment>
-
-     
+      <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-3">
+        <Sidebar />
+        </div>
+        <div className="col-md-8">
+        <NavPage/>
+        </div>
+      </div>
+    </div>
+      
+    </Fragment> 
+    
   );
 }
 

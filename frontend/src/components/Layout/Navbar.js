@@ -26,21 +26,20 @@ function Sesion() {
   if(token){
 
     localStorage.removeItem("token");
+    navigate('/');
   }else{
     navigate('/login');
   }
 }
-
-
   return (
 
     <>
    <div className="w-100 navbr">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light shadow">
-        <div className="logo text-center m-1">
+        <nav id='navbar' className="navbar d-flex navbar-expand-lg navbar-light bg-light shadow">
+        <div className="logo text-center m-1 col-3">
           <img  src={require("../../img/silicon.svg").default} width="150" height="75" alt="logosilicon" className="m-2" />
         </div>
-          <div className="container-fluid">
+          <div className="container-fluid col-7">
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <form className="d-flex form-check-inline position-relative my-2 d-inline-block">
                                 <button onClick={Sesion} className="btn btn-primary btn-buscar p-1 ms-1">{btn_Sesion}</button>
@@ -52,16 +51,10 @@ function Sesion() {
                                 </a>
                             </div>
                         </ul>
-                   
                 </div>
             </nav>
         </div>
-     
-
-      
-        
-    
-        
+           
         </>
             )};
 export default Navbar;
